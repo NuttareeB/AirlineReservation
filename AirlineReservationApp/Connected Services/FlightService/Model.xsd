@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="FlightInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FlightAndPlaneDetailDao">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalculatedEconomyClassCapacity" type="xs:int" />
+          <xs:element minOccurs="0" name="CalculatedFirstClassCapacity" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FlightInfo" nillable="true" type="tns:FlightInfo" />
+  <xs:complexType name="FlightAndPlaneDetailDao">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PlaneDetailDao">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrivalAirport" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ArrivalTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DepartureAirport" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DepartureTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EcoClassCapacity" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EconomyClassPrice" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FirstClassCapacity" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FirstClassPrice" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FlightId" type="ser:guid" />
+          <xs:element minOccurs="0" name="FlightNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FlightAndPlaneDetailDao" nillable="true" type="tns:FlightAndPlaneDetailDao" />
+  <xs:complexType name="PlaneDetailDao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NoCol_EcoClass" type="xs:short" />
+      <xs:element minOccurs="0" name="NoCol_FirstClass" type="xs:short" />
+      <xs:element minOccurs="0" name="NoRow_EcoClass" type="xs:short" />
+      <xs:element minOccurs="0" name="NoRow_FirstClass" type="xs:short" />
+      <xs:element minOccurs="0" name="PlaneId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlaneType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlaneDetailDao" nillable="true" type="tns:PlaneDetailDao" />
+  <xs:complexType name="ArrayOfFlightInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightInfo" nillable="true" type="tns:FlightInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlightInfo" nillable="true" type="tns:ArrayOfFlightInfo" />
+  <xs:complexType name="ArrayOfPlaneDetailDao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlaneDetailDao" nillable="true" type="tns:PlaneDetailDao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlaneDetailDao" nillable="true" type="tns:ArrayOfPlaneDetailDao" />
+</xs:schema>

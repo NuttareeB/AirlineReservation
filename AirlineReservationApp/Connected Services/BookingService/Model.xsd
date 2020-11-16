@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Enum" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfFlightSeatInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightSeatInfo" nillable="true" type="tns:FlightSeatInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlightSeatInfo" nillable="true" type="tns:ArrayOfFlightSeatInfo" />
+  <xs:complexType name="FlightSeatInfo">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Enum" minOccurs="0" name="SeatClass" type="q1:SeatClass" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SeatMatrix" nillable="true" type="q2:ArrayOfArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightSeatInfo" nillable="true" type="tns:FlightSeatInfo" />
+  <xs:complexType name="BookingDetailRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" type="xs:short" />
+      <xs:element minOccurs="0" name="BookingDetailDao" nillable="true" type="tns:BookingDetailDao" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookingDetailRequest" nillable="true" type="tns:BookingDetailRequest" />
+  <xs:complexType name="BookingDetailDao">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SeatPositionDao">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerId" type="ser:guid" />
+          <xs:element minOccurs="0" name="FlightId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookingDetailDao" nillable="true" type="tns:BookingDetailDao" />
+  <xs:complexType name="SeatPositionDao">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Enum" minOccurs="0" name="Class" type="q3:SeatClass" />
+      <xs:element minOccurs="0" name="SeatCol" type="xs:short" />
+      <xs:element minOccurs="0" name="SeatRow" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeatPositionDao" nillable="true" type="tns:SeatPositionDao" />
+</xs:schema>

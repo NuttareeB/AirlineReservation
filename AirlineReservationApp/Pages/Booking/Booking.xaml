@@ -1,0 +1,81 @@
+﻿<Page x:Class="AirlineReservationApp.Booking"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AirlineReservationApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="Booking">
+
+    <Grid Margin="10,0,10,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="firstNameLabel" Content="First Name*:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Grid.Column="1" x:Name="firstNameTextbox" Text="{Binding Path=ItemName}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Grid.Row="1" x:Name="lastNameLabel" Content="Last Name*:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="lastNameTextbox" Text="{Binding Path=ItemName}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Grid.Row="2" x:Name="ageLabel" Content="Age*:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="ageTextbox" Text="{Binding Path=ItemName}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Grid.Row="3" x:Name="class" Content="Ticket Class*:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox Grid.Row="3" Grid.Column="1" x:Name="ticketClassCombobox" Width="120" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Background="Transparent" Foreground="Black" IsEditable="True" Margin="0">
+                <ComboBoxItem IsSelected="True" Tag="1">First Class</ComboBoxItem>
+                <ComboBoxItem Tag="2">Economy Class</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Column="1" VerticalAlignment="Top" Margin="20">
+            <Border Width="300" BorderBrush="Gray" BorderThickness="1" Padding="8">
+                <Grid x:Name="flightDetailGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Fight No:"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding FlightNo}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Departure Airport:"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding DepartureAirport}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Arrival Airport:"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ArrivalAirport}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Departure Time:"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding DepartureTime}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Arrival Time:"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding ArrivalTime}"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="First Class Price:"/>
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding FirstClassPrice}"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Economy Class Price:"/>
+                    <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding EconomyClassPrice}"/>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Top">
+            <Button Grid.Column="2" Click="SelectSeat_Button_Click" Style="{StaticResource buttonStyle}">Select Seat</Button>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,60 @@
+﻿<Page x:Class="AirlineReservationApp.FlightDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AirlineReservationApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="FlightDetails">
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Page.Resources>
+    <Grid Margin="10,0,10,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="flightDataGrid" ColumnHeaderStyle="{StaticResource columnHeaderStyle}" AutoGenerateColumns="False" RowHeaderWidth="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Flight No" Binding="{Binding FlightNo}"/>
+                <DataGridTextColumn Header="Departure Airport" Binding="{Binding DepartureAirport}"/>
+                <DataGridTextColumn Header="Arrival Airport" Binding="{Binding ArrivalAirport}"/>
+                <DataGridTextColumn Header="Departure Time" Binding="{Binding DepartureTime}"/>
+                <DataGridTextColumn Header="Arrival Time" Binding="{Binding ArrivalTime}"/>
+                <DataGridTextColumn Header="First Class Price" Binding="{Binding FirstClassPrice}"/>
+                <DataGridTextColumn Header="Economy Class Price" Binding="{Binding EconomyClassPrice}" Width="*"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="BlanchedAlmond" Padding="10">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Plane Type: " VerticalAlignment="Center" />
+                                <TextBlock FontSize="16" Foreground="MidnightBlue" Text="{Binding PlaneType}" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="First Class Capacity: " VerticalAlignment="Center" />
+                                <TextBlock FontSize="16" Foreground="MidnightBlue" Text="{Binding CalculatedFirstClassCapacity}" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Economy Class Capacity: " VerticalAlignment="Center" />
+                                <TextBlock FontSize="16" Foreground="MidnightBlue" Text="{Binding CalculatedEconomyClassCapacity}" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <Button Grid.Column="2" Click="Seat_Button_Click" Style="{StaticResource buttonStyle}">Seat</Button>
+                            <Button Grid.Column="2" Click="BuyTicket_Button_Click" Style="{StaticResource buttonStyle}">Buy ticket</Button>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <Grid Grid.Row="1">
+            <Button Click="Add_Button_Click" Visibility="{Binding Path=IsShow, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}" Style="{StaticResource buttonStyle}">Add</Button>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e8051d69-66c5-4ecb-ac12-fc1ad7a30e0f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/AirlineReservation/AuthenticationService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AirplaneReservationLib.wsdl" MetadataType="Wsdl" ID="a0fcf8dc-94d1-4611-ab1f-1d16fc1d3c96" SourceId="1" SourceUrl="http://localhost:8000/AirlineReservation/AuthenticationService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="c44459b4-23a5-4f99-9798-2cbe95f9cfc0" SourceId="1" SourceUrl="http://localhost:8000/AirlineReservation/AuthenticationService/mex" />
+    <MetadataFile FileName="AirplaneReservationLib.xsd" MetadataType="Schema" ID="71682cb4-56e9-49cc-8b3c-3bd97ee2dfac" SourceId="1" SourceUrl="http://localhost:8000/AirlineReservation/AuthenticationService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5c6960af-e5b2-4a92-9332-3e9c9966b51c" SourceId="1" SourceUrl="http://localhost:8000/AirlineReservation/AuthenticationService/mex" />
+    <MetadataFile FileName="DataAccess.xsd" MetadataType="Schema" ID="0a901287-0f2a-4a3d-83f2-da5e76dac4cd" SourceId="1" SourceUrl="http://localhost:8000/AirlineReservation/AuthenticationService/mex" />
+    <MetadataFile FileName="Model.xsd" MetadataType="Schema" ID="2e11bbd3-6dfa-40b7-a0cc-6df79b33b5e8" SourceId="1" SourceUrl="http://localhost:8000/AirlineReservation/AuthenticationService/mex" />
+    <MetadataFile FileName="Enum.xsd" MetadataType="Schema" ID="977a2c96-ae4e-4c77-b1c6-07da2bed50f2" SourceId="1" SourceUrl="http://localhost:8000/AirlineReservation/AuthenticationService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
