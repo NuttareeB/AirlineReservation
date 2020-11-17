@@ -25,17 +25,12 @@ The program is developed in WPF and WCF using .NET Framework. The database for t
 
 ## Test User:
 
-**Username:** Intel
-**Password:** Intel
-**Role:** Admin
+**Username:** | **Password:** | **Role:**
+------------ | ------------- | ------------
+Intel           | Intel      | Admin
+Bob         |[leave it blank]|Admin, User
+Anita       |[leave it blank]|User
 
-**Username:** Bob
-**Password:** <leave it blank>
-**Role:** Admin, User
-
-**Username:** Anita
-**Password:** <leave it blank>
-**Role:** User
 
 ## Running the application:
 
@@ -45,7 +40,7 @@ After building the solution, you should be able to run the project from Visual S
 
 You should see the application as shown below:
  
-![Login page](/ApplicationImages/LoginPage.png)
+![Login page](/ApplicationImages/LoginPage.PNG)
 
 ## In progress:
 
@@ -78,5 +73,5 @@ http://localhost:8000/AirlineReservation/FlightService
 
 After this step: you should be able to see:
  
- ![Host page](/ApplicationImages/HostPage.png)
+ ![Host page](/ApplicationImages/HostPage.PNG)
 
