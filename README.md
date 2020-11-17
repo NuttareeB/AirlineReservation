@@ -2,7 +2,7 @@
 
 ## Overview:
 
-I built this program from scratch with no experience on WCF and WPF before. It took me almost 2 weeks to finish it.
+I built this program from scratch with zero prior experience on WCF and WPF. It took me almost 2 weeks to finish it.
 
 The program serves the basic functions of airline flight booking system, but it is easy to extend more as I separate the client/server. On the server side, I have separated the Data Provider and Business logic layer, so the code is clean and can be easy to understand. The responsibility of each layer is obviously separated.
 
